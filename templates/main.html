@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>kaczero 的博客 - 导航</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 onclick="location.href='/'" style="cursor:pointer">kaczero 的空间</h1>
+        </header>
+        <div class="module-grid">
+            {% for id, name in modules.items() %}
+            <a href="{{ url_for('category', cat_id=id) }}" class="module-card">
+                <h2>{{ name }}</h2>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

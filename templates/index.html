@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>欢迎来到 Kaczero 的世界</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<body class="landing-body">
+    <div class="landing-container">
+        <a href="{{ url_for('main') }}" class="content-link">
+            <img src="{{ url_for('static', filename='images/avatar.png') }}" alt="Avatar" class="avatar">
+            <h1>我是 kaczero</h1>
+            <p>欢迎来到我的世界</p>
+        </a>
+    </div>
+</body>
+</html>

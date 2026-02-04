@@ -1,0 +1,104 @@
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Orbitron', 'Segoe UI', sans-serif;
+}
+
+/* 绚丽的动态渐变背景 */
+.landing-body {
+    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c, #4facfe, #00f2fe);
+    background-size: 400% 400%;
+    animation: gradientAnimation 20s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* 居中容器 */
+.landing-container {
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.15); /* 半透明磨砂玻璃 */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1.5s ease-out;
+    transition: transform 0.4s ease;
+}
+
+.landing-container:hover {
+    transform: scale(1.05);
+}
+
+/* 链接去掉下划线，占满容器 */
+.content-link {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* 头像样式 */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    transition: all 0.4s ease;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+}
+
+/* 文字样式 */
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* 淡入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 文字轻微发光动画 */
+@keyframes textGlow {
+    from { text-shadow: 0 0 15px rgba(255, 255, 255, 0.8); }
+    to { text-shadow: 0 0 30px rgba(255, 255, 255, 1); }
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .avatar { width: 120px; height: 120px; }
+    h1 { font-size: 2.8rem; }
+    p { font-size: 1.3rem; }
+    .landing-container { padding: 30px; }
+}
